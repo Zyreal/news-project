@@ -10,6 +10,6 @@ def extract(news_api_key):
     res.raise_for_status()
 
     if res_data.get("status") != "ok":
-        raise Exception(f"API error: {res_data.get("code")} - {res_data.get("message")}")
+        raise Exception(f"API error: {res_data.get('code')} - {res_data.get('message')}")
 
     return res_data["articles"]

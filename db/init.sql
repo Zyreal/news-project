@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS articles(
+	id SERIAL PRIMARY KEY,
+	title TEXT NOT NULL,
+	name TEXT,
+	"publishedAt" TIMESTAMPTZ,
+	url TEXT NOT NULL
+);

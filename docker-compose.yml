@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    env_file: .env
+    depends_on:
+      - db
+  
+  db:
+    image: postgres:15
+    env_file: .env
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql # initally create table
+      - postgres_data:/var/lib/postgresql/data # data from table persists between composes
+    
+volumes:
+  postgres_data:
